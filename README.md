@@ -1,6 +1,6 @@
 # resignal_test
 
-Resignal internship test
+Resignal test
 
 ## Getting Started
 
