@@ -21,28 +21,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.black26,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code_scanner),
-            label: 'Scan Receipt',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.money),
-            label: 'Send & Request',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_rounded),
-            label: 'Settings',
-          ),
-        ],
-      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
@@ -56,7 +34,9 @@ class HomePage extends StatelessWidget {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                          color: Colors.blueGrey, shape: BoxShape.circle),
+                        color: Colors.blueGrey,
+                        shape: BoxShape.circle,
+                      ),
                       height: 60,
                       width: 60,
                     ),
@@ -140,9 +120,7 @@ class HomePage extends StatelessWidget {
                                 primaryText: 'Bill Pay\n',
                                 secondaryText: 'Due on May 14th',
                                 icon: Icons.event_note),
-                            SizedBox(
-                              width: 20,
-                            ),
+                            SizedBox(width: 20),
                             BuildCustomCard(
                                 backgroundColor: Colors.purple[100],
                                 darkShade: Colors.purple,
@@ -183,12 +161,32 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.black26,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            label: 'Dashboard',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.qr_code_scanner),
+            label: 'Scan Receipt',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.money),
+            label: 'Send & Request',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_rounded),
+            label: 'Settings',
+          ),
+        ],
+      ),
     );
   }
 
-  RichText buildRichText(
-    String amount,
-  ) {
+  RichText buildRichText(String amount) {
     return RichText(
       text: TextSpan(
         text: amount,
